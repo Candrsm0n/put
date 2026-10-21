@@ -1,0 +1,11 @@
+{
+  "name": "RuangUang — Keuangan Pribadi",
+  "short_name": "RuangUang",
+  "description": "Dashboard keuangan pribadi yang sederhana dan terarah.",
+  "lang": "id-ID",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1421",
+  "theme_color": "#101827"
+}

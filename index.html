@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="RuangUang — dashboard keuangan pribadi yang rapi dan mudah dipakai.">
+  <title>RuangUang — Keuangan lebih terarah</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2366e3c4'/%3E%3Cpath d='M26 27h14v33c0 8 4 12 11 12s11-4 11-12V27h14v34c0 17-9 26-25 26S26 78 26 61z' fill='%23101827'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="xlsx-export.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="RuangUang beranda">
+        <span class="brand-mark">R</span><span class="brand-name">ruang<span>uang</span><small>PERSONAL FINANCE</small></span>
+      </a>
+      <div class="side-label">MENU</div>
+      <nav class="nav-list" aria-label="Navigasi utama">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">◫</span>Ringkasan</button>
+        <button class="nav-link" data-page="transactions"><span class="nav-icon">↕</span>Transaksi</button>
+        <button class="nav-link" data-page="budgets"><span class="nav-icon">◉</span>Anggaran</button>
+        <button class="nav-link" data-page="goals"><span class="nav-icon">◎</span>Target tabungan</button>
+        <button class="nav-link" data-page="calculators"><span class="nav-icon">⌗</span>Kalkulator</button>
+        <button class="nav-link" data-page="calendar"><span class="nav-icon">▦</span>Kalender</button>
+        <button class="nav-link" data-page="bills"><span class="nav-icon">▤</span>Jadwal tagihan</button>
+        <button class="nav-link" data-page="insights"><span class="nav-icon">✳</span>Insight</button>
+        <button class="nav-link" data-page="reports"><span class="nav-icon">▥</span>Laporan bulanan</button>
+        <button class="nav-link" data-page="settings"><span class="nav-icon">⚙</span>Pengaturan</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="privacy-card"><div class="privacy-icon">⌑</div><strong>Data tetap milikmu</strong><p>Catatan disimpan di perangkat ini. Tidak dikirim ke server.</p><span class="privacy-status"><i></i> PENYIMPANAN LOKAL</span></div>
+      <button class="profile-button" id="profile-button"><span class="avatar">A</span><span><strong>Akun pribadi</strong><small>Pengelola keuangan</small></span><span class="dots">•••</span></button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Buka menu">☰</button>
+        <div class="breadcrumb"><span>RuangUang</span><b>/</b><strong id="breadcrumb-current">Ringkasan</strong></div>
+        <div class="topbar-actions">
+          <div class="live-clock"><span class="clock-dot"></span><span id="clock-time">--:--:--</span><span id="clock-date">Memuat tanggal</span></div>
+          <button class="icon-button" id="theme-toggle" title="Ganti tema" aria-label="Ganti tema">☼</button>
+          <button class="avatar top-avatar" title="Akun">A</button>
+        </div>
+      </header>
+      <div id="page-content" class="page-content" aria-live="polite"></div>
+      <footer class="app-footer"><span>RuangUang <b>•</b> Atur uang, atur arah.</span><span>Pribadi · Offline-ready · <span id="footer-year"></span></span></footer>
+    </main>
+  </div>
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+  <div id="modal-root"></div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
